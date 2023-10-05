@@ -3,111 +3,113 @@
 // sidebar.js
 // This is the dashboard component for SociaLens.
 // It is a bootstrap sidebar with links that set the current view.
-function Sidebar({ onViewChange, currentView }) {
-  const handleClick = (event, view) => {
-    event.preventDefault();
-    console.log("Sidebar handleClick:", view); // debugging line
-    onViewChange(view);
-  };
 
+function Sidebar({ view, setView }) {
   return (
-    <nav id="sidebar" className="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+    <nav
+      id="sidebar"
+      className="col-md-2 col-lg-1 d-md-block bg-danger sidebar"
+    >
       <div className="position-sticky">
         <ul className="nav flex-column">
           <li className="nav-item">
-            <a
-              className={`nav-link ${currentView === "home" ? "active" : ""}`}
-              href="#"
-              onClick={(event) => handleClick(event, "home")}
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 pl-2 ${
+                view === "home" ? "active" : ""
+              }`}
+              onClick={() => setView("home")}
             >
               Home
-            </a>
+            </button>
           </li>
           <li className="nav-item">
-            <a
-              className={`nav-link ${
-                currentView === "uploadData" ? "active" : ""
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 ${
+                view === "uploadData" ? "active" : ""
               }`}
-              href="#"
-              onClick={(event) => handleClick(event, "uploadData")}
+              onClick={() => setView("uploadData")}
             >
               Upload Data
-            </a>
+            </button>
           </li>
           <li className="nav-item">
-            <a
-              className={`nav-link ${
-                currentView === "individual" ? "active" : ""
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 ${
+                view === "individual" ? "active" : ""
               }`}
-              href="#"
-              onClick={(event) => handleClick(event, "individual")}
+              onClick={() => setView("individual")}
             >
               Individual
-            </a>
+            </button>
           </li>
           <li className="nav-item">
-            <a
-              className={`nav-link ${
-                currentView === "classroom" ? "active" : ""
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 ${
+                view === "classroom" ? "active" : ""
               }`}
-              href="#"
-              onClick={(event) => handleClick(event, "classroom")}
+              onClick={() => setView("classroom")}
             >
               Classroom
-            </a>
+            </button>
           </li>
           <li className="nav-item">
-            <a
-              className={`nav-link ${currentView === "year" ? "active" : ""}`}
-              href="#"
-              onClick={(event) => handleClick(event, "year")}
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 ${
+                view === "year" ? "active" : ""
+              }`}
+              onClick={() => setView("year")}
             >
               Year
-            </a>
+            </button>
           </li>
           <li className="nav-item">
-            <a
-              className={`nav-link ${
-                currentView === "correlations" ? "active" : ""
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 ${
+                view === "correlations" ? "active" : ""
               }`}
-              href="#"
-              onClick={(event) => handleClick(event, "correlations")}
+              onClick={() => setView("correlations")}
             >
               Correlations
-            </a>
+            </button>
           </li>
           <li className="nav-item">
-            <a
-              className={`nav-link ${
-                currentView === "reports" ? "active" : ""
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 ${
+                view === "reports" ? "active" : ""
               }`}
-              href="#"
-              onClick={(event) => handleClick(event, "reports")}
+              onClick={() => setView("reports")}
             >
               Reports
-            </a>
+            </button>
           </li>
           <li className="nav-item">
-            <a
-              className={`nav-link ${
-                currentView === "feedback" ? "active" : ""
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 ${
+                view === "feedback" ? "active" : ""
               }`}
-              href="#"
-              onClick={(event) => handleClick(event, "feedback")}
+              onClick={() => setView("feedback")}
             >
               Feedback
-            </a>
+            </button>
           </li>
           <li className="nav-item">
-            <a
-              className={`nav-link ${
-                currentView === "support" ? "active" : ""
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 ${
+                view === "support" ? "active" : ""
               }`}
-              href="#"
-              onClick={(event) => handleClick(event, "support")}
+              onClick={() => setView("support")}
             >
               Support
-            </a>
+            </button>
           </li>
         </ul>
       </div>
