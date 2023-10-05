@@ -23,7 +23,7 @@ cd folder_name
 4. Type the following into terminal
 
 ```bash
-npx create-react-app socialens
+npx create-next-app socialens
 ```
 
 5. Terminal will ask you a few questions
