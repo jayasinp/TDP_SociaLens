@@ -1,0 +1,12 @@
+/* Pravin Mark Jayasinghe */
+/* 5/10/2023 */
+/* Login.module.css */
+/* This file contains the styling rules that modify the default bootstrap5 styling rules. */
+/* This file serves styles to login.js, register.js and forgot.js*/
+
+/* General Styles */
+.container-fluid {
+    background-color: #f4f5f7;  /* A soft gray background for the whole container */
+    min-height: 100vh;
+    padding-top: 5%;
+  }

@@ -1,0 +1,67 @@
+/* Pravin Mark Jayasinghe */
+/* 5/10/2023 */
+/* Dashboard.module.css */
+/* This file contains the styling rules that modify the default bootstrap5 styling rules. */
+
+/* General Styles */
+.container-fluid {
+    background-color: #f4f5f7;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.navbar {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    border-right: 1px solid #e4e5e7;
+    height: calc(100vh - 3.5rem);
+    padding-top: 1rem;
+}
+
+.sidebarLink {
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.sidebarLink:hover {
+    background-color: #f8f9fa;
+}
+
+.sidebarLinkActive {
+    background-color: #e9ecef;
+    color: #007bff;
+}
+
+/* Main Content Styles */
+.mainContent {
+    padding: 1rem 2rem;
+}
+
+/* Header Fonts */
+.headerFont {
+    font-weight: 600;
+}
+
+/* Footer Styles */
+.footer {
+    padding: 1rem 0;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e4e5e7;
+}
+
+.link {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.link:hover {
+    color: #0056b3;
+}
