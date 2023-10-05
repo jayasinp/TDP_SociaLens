@@ -10,48 +10,42 @@ import Link from "next/link";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Sidebar from "../components/sidebar";
-import styles from "@/styles/Dashboard.module.css";
 
 // import view components from dashboardComponents folder
-import Home from "../dashboardComponents/home";
-import UploadData from "../dashboardComponents/uploadData";
-import Individual from "../dashboardComponents/individual";
-import Classroom from "../dashboardComponents/classroom";
-import Year from "../dashboardComponents/year";
-import Correlations from "../dashboardComponents/correlations";
-import Reports from "../dashboardComponents/reports";
-import Feedback from "../dashboardComponents/feedback";
-import Support from "../dashboardComponents/support";
+import Home from "../dashboardComponents/Home";
+import UploadData from "../dashboardComponents/UploadData";
+import Individual from "../dashboardComponents/Individual";
+import Classroom from "../dashboardComponents/Classroom";
+import Year from "../dashboardComponents/Year";
+import Correlations from "../dashboardComponents/Correlations";
+import Reports from "../dashboardComponents/Reports";
+import Feedback from "../dashboardComponents/Feedback";
+import Support from "../dashboardComponents/Support";
 
 function Dashboard() {
   // using useState to set the current view
-  const [currentView, setCurrentView] = useState("home");
-
-  const handleViewChange = (view) => {
-    console.log("Dashboard handleViewChange:", view); // debugging line
-    setCurrentView(view);
-  };
+  const [view, setView] = useState("home");
 
   return (
-    <div className={styles["container-fluid"]}>
+    <div className="container-fluid">
       <Header />
       <div className="row">
-        <aside className={styles.sidebar}>
-          <Sidebar onViewChange={handleViewChange} currentView={currentView} />
+        <aside className="sidebar">
+          <Sidebar view={view} setView={setView} />
         </aside>
-        <main className={`col-md-9 ms-sm-auto col-lg-10 ${styles.mainContent}`}>
-          {currentView === "home" && <Home />}
-          {currentView === "uploadData" && <UploadData />}
-          {currentView === "individual" && <Individual />}
-          {currentView === "classroom" && <Classroom />}
-          {currentView === "year" && <Year />}
-          {currentView === "correlations" && <Correlations />}
-          {currentView === "reports" && <Reports />}
-          {currentView === "feedback" && <Feedback />}
-          {currentView === "support" && <Support />}
+        <main className="col-md-9 ms-sm-auto col-lg-10">
+          {view === "home" && <Home />}
+          {view === "uploadData" && <UploadData />}
+          {view === "individual" && <Individual />}
+          {view === "classroom" && <Classroom />}
+          {view === "year" && <Year />}
+          {view === "correlations" && <Correlations />}
+          {view === "reports" && <Reports />}
+          {view === "feedback" && <Feedback />}
+          {view === "support" && <Support />}
         </main>
       </div>
-      <Footer className={styles.footer} />
+      <Footer className="footer" />
     </div>
   );
 }
