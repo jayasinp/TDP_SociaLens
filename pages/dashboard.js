@@ -12,15 +12,16 @@ import Header from "../components/header";
 import Sidebar from "../components/sidebar";
 
 // import view components from dashboardComponents folder
-import Home from "../dashboardComponents/Home";
-import UploadData from "../dashboardComponents/UploadData";
-import Individual from "../dashboardComponents/Individual";
-import Classroom from "../dashboardComponents/Classroom";
-import Year from "../dashboardComponents/Year";
-import Correlations from "../dashboardComponents/Correlations";
-import Reports from "../dashboardComponents/Reports";
-import Feedback from "../dashboardComponents/Feedback";
-import Support from "../dashboardComponents/Support";
+import Home from "../dashboardComponents/home";
+import UploadData from "../dashboardComponents/uploadData";
+import Individual from "../dashboardComponents/individual";
+import Classroom from "../dashboardComponents/classroom";
+import Year from "../dashboardComponents/year";
+import Correlations from "../dashboardComponents/correlations";
+import Reports from "../dashboardComponents/reports";
+import Feedback from "../dashboardComponents/feedback";
+import Support from "../dashboardComponents/support";
+import Datasets from "../dashboardComponents/datasets";
 
 function Dashboard() {
   // using useState to set the current view
@@ -28,7 +29,7 @@ function Dashboard() {
 
   return (
     //addded classname for dashboard for min height
-    <div className="container-fluid dashboard"> 
+    <div className="container-fluid dashboard">
       <Header />
       <div className="d-flex">
         <aside className="sidebar col-2">
@@ -44,6 +45,7 @@ function Dashboard() {
           {view === "reports" && <Reports />}
           {view === "feedback" && <Feedback />}
           {view === "support" && <Support />}
+          {view === "datasets" && <Datasets />}
         </main>
       </div>
       <Footer className="footer" />

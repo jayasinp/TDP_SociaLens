@@ -1,15 +1,14 @@
 // Pravin Mark Jayasinghe
 // 5/10/2023
+// Charan Prakash and Pravin Jayasing
+// 8/10/2023
 // sidebar.js
 // This is the dashboard component for SociaLens.
 // It is a bootstrap sidebar with links that set the current view.
 
 function Sidebar({ view, setView }) {
   return (
-    <nav
-      id="sidebar"
-      className=" bg-danger sidebar"
-    >
+    <nav id="sidebar" className=" bg-danger sidebar">
       <div className="position-sticky">
         <ul className="nav flex-column">
           <li className="nav-item">
@@ -34,7 +33,17 @@ function Sidebar({ view, setView }) {
               Upload Data
             </button>
           </li>
-          
+          <li className="nav-item">
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 ${
+                view === "datasets" ? "active" : ""
+              }`}
+              onClick={() => setView("datasets")}
+            >
+              Datasets
+            </button>
+          </li>
           <li className="nav-item">
             <button
               type="button"
@@ -79,7 +88,7 @@ function Sidebar({ view, setView }) {
               Correlations
             </button>
           </li>
-          
+
           <li className="nav-item">
             <button
               type="button"
