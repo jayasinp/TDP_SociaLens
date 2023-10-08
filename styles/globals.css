@@ -73,8 +73,7 @@
   }
 }
 
-* {
-  box-sizing: border-box;
+.container-fluid.dashboard{
   padding: 0;
   margin: 0;
 }

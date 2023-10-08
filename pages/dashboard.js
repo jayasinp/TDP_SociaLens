@@ -27,10 +27,11 @@ function Dashboard() {
   const [view, setView] = useState("home");
 
   return (
-    <div className="container-fluid">
+    //addded classname for dashboard for min height
+    <div className="container-fluid dashboard"> 
       <Header />
-      <div className="row">
-        <aside className="sidebar">
+      <div className="d-flex">
+        <aside className="sidebar col-2">
           <Sidebar view={view} setView={setView} />
         </aside>
         <main className="col-md-9 ms-sm-auto col-lg-10">

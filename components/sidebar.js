@@ -8,7 +8,7 @@ function Sidebar({ view, setView }) {
   return (
     <nav
       id="sidebar"
-      className="col-md-2 col-lg-1 d-md-block bg-danger sidebar"
+      className=" bg-danger sidebar"
     >
       <div className="position-sticky">
         <ul className="nav flex-column">
@@ -34,6 +34,7 @@ function Sidebar({ view, setView }) {
               Upload Data
             </button>
           </li>
+          
           <li className="nav-item">
             <button
               type="button"
@@ -78,6 +79,7 @@ function Sidebar({ view, setView }) {
               Correlations
             </button>
           </li>
+          
           <li className="nav-item">
             <button
               type="button"
