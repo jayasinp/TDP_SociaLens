@@ -95,6 +95,7 @@ npm i bootstrap-icons
 |dashboardComponents
 |--> classroom.js
 |--> correlations.js
+|--> datasets.js
 |--> feedback.js
 |--> home.js
 |--> individual.js
@@ -119,7 +120,6 @@ npm i bootstrap-icons
 
 ^
 _copy and paste these files into the folders in your src folder_
-
 you will also find the following files in the public folder:
 
 ```bash
@@ -128,6 +128,7 @@ you will also find the following files in the public folder:
 |-->socialens_dark.png
 |-->socialens_mono.png
 |-->socialens_monodark.png
+|-->favicon.ico
 ```
 
 ^
@@ -139,6 +140,29 @@ If you have followed the steps above, go to terminal and type in:
 
 ```bash
 npm run dev
+```
+
+## Back-End Implementation
+
+1. Navigate to the project directory and run this in terminal:
+```bash
+python3 -m venv venv
+```
+
+2. Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+3. Install the libraries:
+```bash
+pip install Flask Flask-WTF numpy pandas networkx scipy reportlab
+```
+this installs Flask, Flask forms, NumPy, Pandas, NetworkX, SciPy, ReportLab.
+
+4. Install the cross origin resource sharing system:
+```bash
+pip install flask-cors
 ```
 
 ## BEST PRACTICES
