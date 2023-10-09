@@ -1,0 +1,38 @@
+/* Default button styles */
+.rating-button {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 3px 6px; /* Default padding */
+  margin-right: 10px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  transition: all 0.3s ease; /* Add a smooth transition for responsiveness */
+}
+
+/* Add a media query for smaller screens (up to 768px) */
+@media (max-width: 768px) {
+  /* Adjust button styles for smaller screens */
+  .rating-button {
+    padding: 3px 6px; /* Reduced padding for smaller screens */
+    font-size: 12px; /* Reduced font size for smaller screens */
+    margin-right: 2px; /* Reduced margin between buttons */
+    margin-bottom: 5px; /* Reduced margin between rows */
+  }
+
+  /* Adjust container styles for smaller screens */
+  .feedbackContainer {
+    justify-content: flex-start; /* Align content to the top */
+  }
+
+  /* Adjust card styles for smaller screens */
+  .feedbackCard {
+    width: 100%; /* Reduce the width of the card */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  /* Move buttons to the bottom for smaller screens */
+  .rating-input-wrapper {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start; /* Align buttons to the left */
+  }
+}

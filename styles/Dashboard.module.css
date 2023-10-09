@@ -2,13 +2,21 @@
 /* 5/10/2023 */
 /* Dashboard.module.css */
 /* This file contains the styling rules that modify the default bootstrap5 styling rules. */
-/* Priya - added css for dashboard */
-
+/* Priya*/
+/* 8/10/2023 */
+/* added text-footer alignment
+/* Dhruvi*/
+/* 9/10/2023 */
+/* added margin-width*/
 
 /* General Styles */
 .container-fluid {
     background-color: #f4f5f7;
     min-height: 100vh;
+}
+
+.margin {
+    display: block;
 }
 
 /* Header Styles */
@@ -86,3 +94,8 @@
     text-align:center;
     color: white;
 }
+
+.max-width{
+    max-width: 100%;
+}
+
