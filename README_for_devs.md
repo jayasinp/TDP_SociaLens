@@ -67,6 +67,11 @@ once bootstrap is installed, type this into terminal:
 npm i echarts
 ```
 
+then install bootstrap icons like this:
+```bash
+npm i bootstrap-icons
+```
+
 8. Create the file structure for this application. In the src folder you will find two folders, one for pages and one for styles. Create two new directories, one called components and one called dashboardComponents. The default pages folder contains another folder called api, we'll leave that be for now.
 
 ```bash
