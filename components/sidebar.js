@@ -5,9 +5,11 @@
 // sidebar.js
 // This is the dashboard component for SociaLens.
 // It is a bootstrap sidebar with links that set the current view.
-// Priya (CSS)
+// Priya (CSS) and Pravin Jayasinghe (icons)
 // 9/10/2023
-// added css and image
+// added css and image, added bootstrap icons
+
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Sidebar({ view, setView }) {
   return (
@@ -22,6 +24,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("home")}
             >
+              <i className="bi bi-house-fill me-2"></i>
               Home
             </button>
           </li>
@@ -33,6 +36,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("uploadData")}
             >
+              <i class="bi bi-cloud-arrow-up-fill me-2"></i>
               Upload Data
             </button>
           </li>
@@ -44,6 +48,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("datasets")}
             >
+              <i class="bi bi-database-fill me-2"></i>
               Datasets
             </button>
           </li>
@@ -55,7 +60,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("individual")}
             >
-              Individual
+              <i class="bi bi-person-raised-hand me-2"></i> Individual
             </button>
           </li>
           <li className="nav-item">
@@ -66,6 +71,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("classroom")}
             >
+              <i class="bi bi-file-earmark-person-fill me-2"></i>
               Classroom
             </button>
           </li>
@@ -77,6 +83,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("year")}
             >
+              <i class="bi bi-people-fill me-2"></i>
               Year
             </button>
           </li>
@@ -88,6 +95,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("correlations")}
             >
+              <i class="bi bi-clipboard-data-fill me-2"></i>
               Correlations
             </button>
           </li>
@@ -100,6 +108,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("reports")}
             >
+              <i class="bi bi-file-earmark-text-fill me-2"></i>
               Reports
             </button>
           </li>
@@ -111,6 +120,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("feedback")}
             >
+              <i class="bi bi-chat-square-dots-fill me-2"></i>
               Feedback
             </button>
           </li>
@@ -122,6 +132,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("support")}
             >
+              <i class="bi bi-question-circle-fill me-2"></i>
               Support
             </button>
           </li>
