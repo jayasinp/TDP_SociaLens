@@ -1,16 +1,19 @@
 // Pravin Mark Jayasinghe
 // 5/10/2023
-// Charan Prakash and Pravin Jayasing
+// Charan Prakash and Pravin Jayasinghe
 // 8/10/2023
 // sidebar.js
 // This is the dashboard component for SociaLens.
 // It is a bootstrap sidebar with links that set the current view.
+// Priya (CSS)
+// 9/10/2023
+// added css and image
 
 function Sidebar({ view, setView }) {
   return (
     <nav id="sidebar" className=" bg-danger sidebar">
-      <div className="position-sticky">
-        <ul className="nav flex-column">
+      <div className="d-flex flex-column align-items-center position-sticky">
+        <ul className="nav flex-column text-center">
           <li className="nav-item">
             <button
               type="button"
