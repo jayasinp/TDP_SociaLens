@@ -1,4 +1,6 @@
 # SociaLens
+### Written by Pravin Mark Jayasinghe for Team 2
+### COS60011: Technology Design Project
 
 ## Installation guide for Developers
 
@@ -146,7 +148,27 @@ npm run dev
 
 1. Navigate to the project directory and run this in terminal:
 ```bash
+mkdir backend
+cd backend
 python3 -m venv venv
+```
+This code will create a folder called backend at the same level as your react app, but not IN your react app folder. Then it will enter the backend folder and install a python3 virtual environment.
+
+Don't install this in the react application folder. We seperate the back-end and front-end code for better organisation and to prevent any potential conflicts or issues.
+
+Your file structure will look like this:
+```bash
+socialens/
+│
+├── socialens/ (your React app)
+│   ├── src/
+│   ├── public/
+│   ├── ...
+│
+├── backend/ (your Flask backend)
+│   ├── venv/ (your virtual environment)
+│
+└── ...
 ```
 
 2. Activate the virtual environment
@@ -154,15 +176,97 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
+After running this code, terminal will not give you any indication if the virtual environment is online or not, but if you run this code, we can assume the virtual environment is activated.
+
 3. Install the libraries:
 ```bash
 pip install Flask Flask-WTF numpy pandas networkx scipy reportlab
 ```
-this installs Flask, Flask forms, NumPy, Pandas, NetworkX, SciPy, ReportLab.
+this installs Flask, Flask forms, NumPy, Pandas, NetworkX, SciPy, ReportLab. You will see a lot of activity in terminal confirming that the libraries are being installed.
+
+4. In the backend folder (not the venv folder) create a file called app.py and paste this boiletplate template in first:
+```python
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run()
+```
+
+We do this to install Flask-CORS. We will remove all this boilerplate code with the actual app.py from the repo in a few steps.
 
 4. Install the cross origin resource sharing system:
 ```bash
 pip install flask-cors
+```
+
+after flask-cors is installed, copy and paste this code to your app.py:
+```python
+from flask import Flask
+from flask_cors import CORS #added this cors import statement
+
+app = Flask(__name__)
+cors = CORS(app) #add this call to cors
+
+
+@app.route('/') #this will connect to the react application
+def hello_world():
+    return 'Hello, World!'
+
+
+if __name__ == '__main__':
+    app.run()
+```
+
+5. While you are in the backend folder run this code to start the flask app server on localhost:5000/
+```bash
+python app.py
+```
+You will find a simple "Hello world" message at localhost:5000/.
+
+6. Connect to the react application. First return to the react app:
+```bash
+cd ..
+cd socialens
+```
+^ get back to the react app then run this:
+```bash
+npm i axios
+```
+This will install the Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser.
+
+7. Head back to the backend folder and install the database system:
+```bash
+pip install Flask-SQLAlchemy
+```
+This will install SQLAlchemy which is a SQL system with python.
+The contents of models.py will define the database schema.
+
+8. In the react app, create a proxy. Go to package.json and add this line:
+```json
+"proxy": "http://localhost:5000",
+```
+^ this line goes below the "private" entry.
+
+9. Create a new folder called "utils" in your src folder in the react app. Add the the utils folder contents from the repo to this folder.
+
+10. Copy the backend code files to your backend folder and then run the flask app then the react app
+
+
+## Dev team user accounts
+
+Username ; password
+```bash
+pravin@pravin.com ; 123
+serge@serge.com ; 456
+dhruvi@dhruvi.com ; 789
+priya@priya.com ; 123
+charan@charan.com ; 456
+chathuni@chathuni.com ; 789
 ```
 
 ## BEST PRACTICES
