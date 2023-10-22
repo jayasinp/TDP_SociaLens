@@ -237,6 +237,10 @@ The contents of models.py will define the database schema.
 
 10. Copy the backend code files to your backend folder and then run the flask app then the react app
 
+## IMPORTANT
+- the react app is setup to run on port:3000
+- the react server is setup to run on port:5002
+- the flask server is setup to run on port:5001
 
 ## BEST PRACTICES
 
