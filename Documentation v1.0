@@ -1,0 +1,35 @@
+TDP_SociaLens Documentation
+Overview
+The TDP_SociaLens repository is a project that seems to be focused on data processing and visualization, possibly related to social interactions or classroom dynamics. The repository is structured with both backend and frontend components.
+
+Backend
+The backend is primarily written in Python and contains several modules:
+
+app.py: This is likely the main application or entry point for the backend.
+clean.py: A module dedicated to data cleaning.
+models.py: Defines the data models used in the application.
+revalidate_data.py: A module for revalidating data.
+schemas.py: Contains schemas, possibly for data validation or database interactions.
+validate_data.py: A module for data validation.
+year.py: The purpose of this module is unclear from the name alone, but it might be related to handling data based on years.
+Frontend
+The frontend seems to be written in JavaScript, possibly using a framework like React. It consists of general components and dashboard components:
+
+General Components:
+footer.js: Defines the footer of the application.
+header.js: Defines the header of the application.
+navbar.js: Defines the navigation bar.
+Dashboard Components:
+DataSkeleton.js: Possibly a placeholder or loading component for data visualization.
+HomeSkeleton.js: A placeholder or loading component for the home page.
+classroom.js: A component related to classroom data or visualization.
+correlations.js: A component for visualizing correlations.
+datasets.js: A component for handling or displaying datasets.
+feedback.js: A component for collecting or displaying feedback.
+home.js: The main dashboard home component.
+individual.js: A component for individual data or visualization.
+Additional Documentation
+For more detailed information, the repository contains two README files:
+
+README.md: General information about the project.
+README_for_devs.md: Information specifically for developers.
