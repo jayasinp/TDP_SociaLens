@@ -66,13 +66,15 @@ npm i bootstrap
 once bootstrap is installed, type this into terminal:
 
 ```bash
-npm i echarts
+npm install d3 express cors
 ```
 
 then install bootstrap icons like this:
 ```bash
 npm i bootstrap-icons
 ```
+
+then install 
 
 8. Create the file structure for this application. In the src folder you will find two folders, one for pages and one for styles. Create two new directories, one called components and one called dashboardComponents. The default pages folder contains another folder called api, we'll leave that be for now.
 
@@ -87,37 +89,16 @@ npm i bootstrap-icons
 
 ## Using the repository
 
-1. Download the files in the repository, these are the files:
+1. Download the files in the repository, these are the folders:
 
 ```bash
 |components
-|--> footer.js
-|--> header.js
-|--> sidebar.js
 |dashboardComponents
-|--> classroom.js
-|--> correlations.js
-|--> datasets.js
-|--> feedback.js
-|--> home.js
-|--> individual.js
-|--> reports.js
-|--> support.js
-|--> uploadData.js
-|--> year.js
 |pages
-|--> _app.js
-|--> _document.js
-|--> dashboard.js
-|--> forgot.js
-|--> index.js
-|--> login.js
-|--> register.js
 |styles
-|--> Dashboard.module.css
-|--> Login.module.css
-|--> Home.module.css
-|--> globals.css
+|public
+|jan_graphs
+
 ```
 
 ^
@@ -201,7 +182,7 @@ We do this to install Flask-CORS. We will remove all this boilerplate code with 
 
 4. Install the cross origin resource sharing system:
 ```bash
-pip install flask-cors
+pip install flask-cors openpyxl
 ```
 
 after flask-cors is installed, copy and paste this code to your app.py:
@@ -256,18 +237,6 @@ The contents of models.py will define the database schema.
 
 10. Copy the backend code files to your backend folder and then run the flask app then the react app
 
-
-## Dev team user accounts
-
-Username ; password
-```bash
-pravin@pravin.com ; 123
-serge@serge.com ; 456
-dhruvi@dhruvi.com ; 789
-priya@priya.com ; 123
-charan@charan.com ; 456
-chathuni@chathuni.com ; 789
-```
 
 ## BEST PRACTICES
 
