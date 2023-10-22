@@ -2,8 +2,6 @@
 /* 5/10/2023 */
 /* Dashboard.module.css */
 /* This file contains the styling rules that modify the default bootstrap5 styling rules. */
-/* Priya - added css for dashboard */
-
 
 /* General Styles */
 .container-fluid {
@@ -20,7 +18,7 @@
 /* Sidebar Styles */
 .sidebar {
     border-right: 1px solid #e4e5e7;
-   
+    
     padding-top: 1rem;
 }
 
@@ -79,10 +77,4 @@
 .correlations-matrix-container{
     min-width: 50vw;
     min-height: 50vh;
-}
-
-/* footer css*/
-.footer-text{
-    text-align:center;
-    color: white;
 }

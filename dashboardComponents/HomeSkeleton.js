@@ -9,7 +9,9 @@ function HomeSkeleton() {
       </div>
 
       <div className={styles["shared-dom"]}>
-        <div className={styles["sub-rect"] + " " + styles["pure-background"]}></div>
+        <div
+          className={styles["sub-rect"] + " " + styles["pure-background"]}
+        ></div>
       </div>
     </div>
   );

@@ -36,23 +36,23 @@ function Login() {
             </div>
             <div className="card-body">
               <form className="form-floating mb-3">
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <input
                     type="email"
-                    class="form-control"
+                    className="form-control"
                     id="email"
                     placeholder="name@example.com"
                   />
-                  <label for="floatingInput">Email address</label>
+                  <label htmlFor="email">Email address</label>
                 </div>
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <input
                     type="password"
-                    class="form-control"
+                    className="form-control"
                     id="password"
                     placeholder="Password"
                   />
-                  <label for="floatingPassword">Password</label>
+                  <label htmlFor="password">Password</label>
                 </div>
                 <div className="mb-3">
                   <Link href="/dashboard">

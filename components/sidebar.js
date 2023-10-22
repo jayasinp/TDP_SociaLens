@@ -8,14 +8,16 @@
 // Priya (CSS) and Pravin Jayasinghe (icons)
 // 9/10/2023
 // added css and image, added bootstrap icons
+// Pravin
+// 18/10/23 - updated sidebar bootstrap classes for left alignment
 
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Sidebar({ view, setView }) {
   return (
     <nav id="sidebar" className=" bg-danger sidebar">
-      <div className="d-flex flex-column align-items-center position-sticky">
-        <ul className="nav flex-column text-center">
+      <div className="d-flex flex-column align-items-start position-sticky">
+        <ul className="nav flex-column text-start">
           <li className="nav-item">
             <button
               type="button"
@@ -36,7 +38,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("uploadData")}
             >
-              <i class="bi bi-cloud-arrow-up-fill me-2"></i>
+              <i className="bi bi-cloud-arrow-up-fill me-2"></i>
               Upload Data
             </button>
           </li>
@@ -48,7 +50,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("datasets")}
             >
-              <i class="bi bi-database-fill me-2"></i>
+              <i className="bi bi-database-fill me-2"></i>
               Datasets
             </button>
           </li>
@@ -60,7 +62,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("individual")}
             >
-              <i class="bi bi-person-raised-hand me-2"></i> Individual
+              <i className="bi bi-person-raised-hand me-2"></i> Individual
             </button>
           </li>
           <li className="nav-item">
@@ -71,7 +73,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("classroom")}
             >
-              <i class="bi bi-file-earmark-person-fill me-2"></i>
+              <i className="bi bi-file-earmark-person-fill me-2"></i>
               Classroom
             </button>
           </li>
@@ -83,10 +85,24 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("year")}
             >
-              <i class="bi bi-people-fill me-2"></i>
+              <i className="bi bi-people-fill me-2"></i>
               Year
             </button>
           </li>
+
+          <li className="nav-item">
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 ${
+                view === "sna" ? "active" : ""
+              }`}
+              onClick={() => setView("sna")}
+            >
+              <i className="bi bi-building-fill me-2"></i>
+              SNA
+            </button>
+          </li>
+
           <li className="nav-item">
             <button
               type="button"
@@ -95,7 +111,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("correlations")}
             >
-              <i class="bi bi-clipboard-data-fill me-2"></i>
+              <i className="bi bi-clipboard-data-fill me-2"></i>
               Correlations
             </button>
           </li>
@@ -108,7 +124,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("reports")}
             >
-              <i class="bi bi-file-earmark-text-fill me-2"></i>
+              <i className="bi bi-file-earmark-text-fill me-2"></i>
               Reports
             </button>
           </li>
@@ -120,7 +136,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("feedback")}
             >
-              <i class="bi bi-chat-square-dots-fill me-2"></i>
+              <i className="bi bi-chat-square-dots-fill me-2"></i>
               Feedback
             </button>
           </li>
@@ -132,7 +148,7 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("support")}
             >
-              <i class="bi bi-question-circle-fill me-2"></i>
+              <i className="bi bi-question-circle-fill me-2"></i>
               Support
             </button>
           </li>

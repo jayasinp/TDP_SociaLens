@@ -24,11 +24,10 @@ function Home() {
         <HomeSkeleton /> // Display the skeleton component while loading
       ) : (
         <div>
-          <div><h1>Welcome to the Dashboard</h1></div>
           <div>
-            This is the dashboard page for SociaLens. It is a complex page with
-            a sidenav bar that allows you to switch between view components
+            <h1>Hello User</h1>
           </div>
+          <div>Get started by uploading your data</div>
           {/* Your interactive components can go here */}
         </div>
       )}

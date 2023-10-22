@@ -22,6 +22,7 @@ import Reports from "../dashboardComponents/reports";
 import Feedback from "../dashboardComponents/feedback";
 import Support from "../dashboardComponents/support";
 import Datasets from "../dashboardComponents/datasets";
+import Sna from "../dashboardComponents/sna";
 
 function Dashboard() {
   // using useState to set the current view
@@ -46,6 +47,7 @@ function Dashboard() {
           {view === "feedback" && <Feedback />}
           {view === "support" && <Support />}
           {view === "datasets" && <Datasets />}
+          {view === "sna" && <Sna />}
         </main>
       </div>
       <Footer className="footer" />
