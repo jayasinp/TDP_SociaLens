@@ -23,6 +23,9 @@ import Feedback from "../dashboardComponents/feedback";
 import Support from "../dashboardComponents/support";
 import Datasets from "../dashboardComponents/datasets";
 import Sna from "../dashboardComponents/sna";
+import Survey from "../dashboardComponents/classroomSNA";
+import Deidentify from "../dashboardComponents/deidentify";
+import NetworkxProcessor from "../dashboardComponents/NetworkxProcessor";
 
 function Dashboard() {
   // using useState to set the current view
@@ -48,6 +51,9 @@ function Dashboard() {
           {view === "support" && <Support />}
           {view === "datasets" && <Datasets />}
           {view === "sna" && <Sna />}
+          {view === "survey" && <Survey />}
+          {view === "deidentify" && <Deidentify />}
+          {view === "networkxProcessor" && <NetworkxProcessor />}
         </main>
       </div>
       <Footer className="footer" />
