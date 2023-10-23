@@ -58,6 +58,18 @@ function Sidebar({ view, setView }) {
             <button
               type="button"
               className={`btn btn-danger mb-3 ${
+                view === "deidentify" ? "active" : ""
+              }`}
+              onClick={() => setView("deidentify")}
+            >
+              <i class="bi bi-patch-question-fill me-2"></i>
+              Deidentify
+            </button>
+          </li>
+          <li className="nav-item">
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 ${
                 view === "individual" ? "active" : ""
               }`}
               onClick={() => setView("individual")}
@@ -81,6 +93,18 @@ function Sidebar({ view, setView }) {
             <button
               type="button"
               className={`btn btn-danger mb-3 ${
+                view === "survey" ? "active" : ""
+              }`}
+              onClick={() => setView("survey")}
+            >
+              <i class="bi bi-diagram-2-fill me-2"></i>
+              Survey
+            </button>
+          </li>
+          <li className="nav-item">
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 ${
                 view === "year" ? "active" : ""
               }`}
               onClick={() => setView("year")}
@@ -89,7 +113,18 @@ function Sidebar({ view, setView }) {
               Year
             </button>
           </li>
-
+          <li className="nav-item">
+            <button
+              type="button"
+              className={`btn btn-danger mb-3 ${
+                view === "networkxProcessor" ? "active" : ""
+              }`}
+              onClick={() => setView("networkxProcessor")}
+            >
+              <i class="bi bi-bookmark-x-fill me-2"></i>
+              NetworkX
+            </button>
+          </li>
           <li className="nav-item">
             <button
               type="button"
@@ -98,11 +133,10 @@ function Sidebar({ view, setView }) {
               }`}
               onClick={() => setView("sna")}
             >
-              <i className="bi bi-building-fill me-2"></i>
+              <i class="bi bi-diagram-3-fill me-2"></i>
               SNA
             </button>
           </li>
-
           <li className="nav-item">
             <button
               type="button"
