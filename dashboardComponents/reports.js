@@ -2,157 +2,88 @@
 // 8/10/2023
 // reports.js
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Reports() {
-  const [title, setTitle] = useState("");
-  const [subtitle, setSubtitle] = useState("");
+  const [cleanedDatasets, setCleanedDatasets] = useState([]);
   const [selectedDataset, setSelectedDataset] = useState("");
-  const [overallSchoolOptions, setOverallSchoolOptions] = useState({
-    wellbeing: false,
-    sentiment: false,
-    statistics: false,
-    metrics: false,
-  });
-  const [comparativeAnalysisOptions, setComparativeAnalysisOptions] = useState({
-    academics: false,
-    wellbeing: false,
-    analytics: false,
-  });
 
-  const handleGenerateReport = () => {
-    // This is where you'd integrate with your backend service
-    // that uses ReportLab to generate the PDF.
-    console.log("Generating report with:", {
-      title,
-      subtitle,
-      selectedDataset,
-      overallSchoolOptions,
-      comparativeAnalysisOptions,
-    });
+  useEffect(() => {
+    fetch("http://localhost:5001/api/cleaned_datasets_list")
+      .then((response) => response.json())
+      .then((data) => {
+        setCleanedDatasets(data.cleaned_datasets_list);
+      })
+      .catch((error) => {
+        console.error("Error fetching cleaned datasets:", error);
+      });
+  }, []);
+
+  const handleDatasetChange = (event) => {
+    setSelectedDataset(event.target.value);
+  };
+
+  const handleGenerateReportClick = () => {
+    fetch("http://localhost:5001/api/report_generator", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ selected_dataset: selectedDataset }),
+    })
+      .then((response) => {
+        response.blob().then((blob) => {
+          let url = window.URL.createObjectURL(blob);
+          let a = document.createElement("a");
+          a.href = url;
+          a.download = "report.pdf";
+          a.click();
+        });
+      })
+      .catch((error) => {
+        console.error("Error generating report:", error);
+      });
   };
 
   return (
-    <div className="container mt-5">
-      <div className="card">
-        <div className="card-header">PDF Report Generator</div>
-        <div className="card-body">
-          <form>
-            <div className="mb-3">
-              <label htmlFor="reportTitle" className="form-label">
-                Report Title
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="reportTitle"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="reportSubtitle" className="form-label">
-                Report Subtitle
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="reportSubtitle"
-                value={subtitle}
-                onChange={(e) => setSubtitle(e.target.value)}
-              />
-            </div>
-            <div className="mb-3">
-              <label>Data Set</label>
-              <div>
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="dataset"
-                    id="dataset1"
-                    value="Dataset 1"
-                    checked={selectedDataset === "Dataset 1"}
-                    onChange={() => setSelectedDataset("Dataset 1")}
-                  />
-                  <label className="form-check-label" htmlFor="dataset1">
-                    Data Set 1
-                  </label>
-                </div>
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="dataset"
-                    id="dataset2"
-                    value="Dataset 2"
-                    checked={selectedDataset === "Dataset 2"}
-                    onChange={() => setSelectedDataset("Dataset 2")}
-                  />
-                  <label className="form-check-label" htmlFor="dataset2">
-                    Data Set 2
-                  </label>
-                </div>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-12">
+          <div className="card m-3 border border-danger bg-dark">
+            <div className="card-body">
+              <h1 className="heading mb-3 text-danger text-center">
+                Generate Report
+              </h1>
+
+              <div className="mb-3">
+                <label htmlFor="dataset-dropdown-report" className="form-label">
+                  Choose a Dataset
+                </label>
+                <select
+                  id="dataset-dropdown-report"
+                  className="form-select"
+                  onChange={handleDatasetChange}
+                  value={selectedDataset}
+                >
+                  <option value="" disabled>
+                    Select a dataset
+                  </option>
+                  {cleanedDatasets.map((dataset) => (
+                    <option key={dataset} value={dataset}>
+                      {dataset}
+                    </option>
+                  ))}
+                </select>
               </div>
+
+              <button
+                className="btn btn-danger mb-3 d-block mx-auto"
+                onClick={handleGenerateReportClick}
+              >
+                Generate Report
+              </button>
             </div>
-            <div className="mb-3">
-              <label>Overall School</label>
-              <div>
-                {["wellbeing", "sentiment", "statistics", "metrics"].map(
-                  (option) => (
-                    <div key={option} className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id={option}
-                        checked={overallSchoolOptions[option]}
-                        onChange={() =>
-                          setOverallSchoolOptions((prev) => ({
-                            ...prev,
-                            [option]: !prev[option],
-                          }))
-                        }
-                      />
-                      <label className="form-check-label" htmlFor={option}>
-                        {option.charAt(0).toUpperCase() + option.slice(1)}
-                      </label>
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
-            <div className="mb-3">
-              <label>Comparative Analysis</label>
-              <div>
-                {["academics", "wellbeing", "analytics"].map((option) => (
-                  <div key={option} className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id={option}
-                      checked={comparativeAnalysisOptions[option]}
-                      onChange={() =>
-                        setComparativeAnalysisOptions((prev) => ({
-                          ...prev,
-                          [option]: !prev[option],
-                        }))
-                      }
-                    />
-                    <label className="form-check-label" htmlFor={option}>
-                      {option.charAt(0).toUpperCase() + option.slice(1)}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={handleGenerateReport}
-            >
-              Generate Report
-            </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
